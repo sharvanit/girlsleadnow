@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events & Programs | Girls Lead Now</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+           height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background-color: rgb(255, 180, 208);
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 125px;
+            height: 55px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #df719d;
+        }
+
+        .nav-button {
+            background-color: #e587b6;
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 25px;
+        }
+
+        .nav-button:hover {
+            background-color: #812453;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .page-hero {
+            text-align: center;
+            padding: 100px 20px 90px;
+             background: linear-gradient(
+                135deg,
+                #ffffff,
+                #eba9cd,
+                #eb91b7
+            );
+        }
+
+        .page-tag {
+            display: inline-block;
+            background-color: #f1dceb;
+            color: #8e3d73;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(45px, 7vw, 70px);
+            color: #241c23;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 span {
+            color: #8e3d73;
+        }
+
+        .page-hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* =========================
+           EVENTS
+        ========================= */
+
+        .events-section {
+            padding: 90px 7%;
+            background-color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            color: #241c23;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .events-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .event-card {
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.25s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .event-image {
+            height: 190px;
+            background: linear-gradient(
+                135deg,
+                #f9eaf5,
+                #f1dceb
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 55px;
+        }
+
+        .event-content {
+            padding: 25px;
+        }
+
+        .event-date {
+            color: #8e3d73;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .event-content h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+            color: #241c23;
+        }
+
+        .event-content p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* =========================
+           PROGRAMS
+        ========================= */
+
+        .programs-section {
+            padding: 90px 7%;
+            background-color: #faf7fa;
+        }
+
+        .programs-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+        }
+
+        .program-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .program-card h3 {
+            color: #8e3d73;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .program-card p {
+            color: #666;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #241c23;
+            color: white;
+            padding: 60px 7% 30px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand h2 {
+            color: #f0cde5;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            color: #bbb;
+            max-width: 350px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #bbb;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .events-section,
+            .programs-section {
+                padding: 70px 5%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            <img src="girlsleadnowfinal.png" alt="Girls Lead Now Logo">
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="index.html#about">About</a>
+
+            <a href="index.html#values">Our Values</a>
+
+            <a href="index.html#leadership">Leadership</a>
+
+            <a href="events.html">Events & Programs</a>
+
+            <a href="index.html#contact" class="nav-button">
+                Get Involved
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         PAGE HERO
+    ========================= -->
+
+    <section class="page-hero">
+
+        <div class="page-tag">
+            GIRLS LEAD NOW
+        </div>
+
+        <h1>
+            Events & <span>Programs</span>
+        </h1>
+
+        <p>
+            Explore the events, programs, and initiatives that bring
+            Girls Lead Now's mission to life.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         EVENTS
+    ========================= -->
+
+    <section class="events-section">
+
+        <div class="section-header">
+
+            <h2>Our Events</h2>
+
+            <p>
+                From leadership opportunities to community service,
+                our events give girls the opportunity to connect,
+                learn, and lead.
+            </p>
+
+        </div>
+         <div class="event-card">
+
+                <div class="event-image">
+                    🎤
+                </div>
+
+                <div class="event-content">
+
+                    <div class="event-date">
+                        Coming Soon
+                    </div>
+
+                    <h3>
+                        Girls Lead Now Leadership Summit
+                    </h3>
+
+                    <p>
+                        A future event bringing together girls to
+                        develop leadership skills, connect with peers,
+                        and learn from inspiring leaders.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROGRAMS
+    ========================= -->
+
+    <section class="programs-section">
+
+        <div class="section-header">
+
+            <h2>Our Programs</h2>
+
+            <p>
+                [placeholder text] 
+            </p>
+
+        </div>
+
+
+        <div class="programs-grid">
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    fake program 1
+                </h3>
+
+                <p>
+                    la dee da al de do
+                </p>
+
+            </div>
+
+
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    fake program 2
+                </h3>
+
+                <p>
+                    la dee da al de do
+                </p>
+
+            </div>
+
+
+           
+
+    </section>
+
+                    communities.
+                </p>
+
+            </div>
+
+
+           
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h2>Girls Lead Now</h2>
+
+                <p>
+                    Empowering girls. Building leaders.
+                    Creating change.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Explore</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#leadership">
+                    Leadership
+                </a>
+
+                <a href="events.html">
+                    Events & Programs
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Girls Lead Now. All rights reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>     
