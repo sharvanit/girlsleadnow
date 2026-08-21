@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leadership | Girls Lead Now</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background-color: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 125px;
+            height: 55px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #a64d86;
+        }
+
+        .nav-button {
+            background-color: #8e3d73;
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 25px;
+        }
+
+        .nav-button:hover {
+            background-color: #6f2e59;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(
+                135deg,
+                #fff5fb,
+                #f9eef7,
+                #ffffff
+            );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: #f1dceb;
+            color: #8e3d73;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 75px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+            color: #241c23;
+        }
+
+        .hero h1 span {
+            color: #8e3d73;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 19px;
+            color: #555;
+        }
+
+
+        /* =========================
+           LEADERSHIP SECTION
+        ========================= */
+
+        .leadership {
+            padding: 100px 7%;
+            background-color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 70px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #241c23;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           LEADERSHIP GROUP
+        ========================= */
+
+        .leadership-group {
+            max-width: 1100px;
+            margin: 0 auto 75px;
+        }
+
+        .leadership-title {
+            text-align: center;
+            font-size: 28px;
+            color: #8e3d73;
+            margin-bottom: 30px;
+        }
+
+        .leadership-subtitle {
+            text-align: center;
+            color: #777;
+            margin-top: -20px;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           LEADER GRID
+        ========================= */
+
+        .leader-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        /* =========================
+           LEADER CARD
+        ========================= */
+
+        .leader-card {
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: 0.25s;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .leader-photo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(
+                135deg,
+                #f1dceb,
+                #f4dce9
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 40px;
+        }
+
+        .leader-card h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #241c23;
+        }
+
+        .leader-role {
+            color: #8e3d73;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           HEAD DIRECTOR CARDS
+        ========================= */
+
+        .head-group {
+            background: linear-gradient(
+                135deg,
+                #fff5fb,
+                #f9eef7
+            );
+
+            padding: 45px;
+            border-radius: 25px;
+        }
+
+        .head-group .leader-card {
+            border: 2px solid #f1dceb;
+        }
+
+        .head-group .leader-photo {
+            background-color: #8e3d73;
+            color: white;
+        }
+
+
+        /* =========================
+           TBD
+        ========================= */
+
+        .tbd {
+            color: #999;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #241c23;
+            color: white;
+            padding: 60px 7% 30px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand h2 {
+            color: #f0cde5;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            color: #bbb;
+            max-width: 350px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #bbb;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 450px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .leadership {
+                padding: 75px 5%;
+            }
+
+            .section-header h2 {
+                font-size: 34px;
+            }
+
+            .leader-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .head-group {
+                padding: 30px 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            <img src="girls-lead-now-logo.png" alt="Girls Lead Now Logo">
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html#about">About</a>
+
+            <a href="index.html#values">Our Values</a>
+
+             <a href="leadership.html">Leadership</a>
+
+            <a href="events.html">Events & Programs</a>
+
+            <a href="curriculum.html">Curriculum</a>
+            
+            <a href="index.html#chapters">Chapters</a>
+
+
+            <a href="index.html#contact" class="nav-button">
+                Get Involved
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                GIRLS LEAD NOW
+            </div>
+
+            <h1>
+                Meet the <span>Leadership.</span>
+            </h1>
+
+            <p>
+                Meet the students helping lead Girls Lead Now,
+                build our community, and turn ideas into action.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LEADERSHIP
+    ========================= -->
+
+    <section class="leadership">
+
+        <div class="section-header">
+
+            <h2>Our Leadership Team</h2>
+
+            <p>
+                Girls Lead Now is powered by student leaders who
+                bring their ideas, skills, and passion to our
+                growing organization.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             EXECUTIVE LEADERSHIP
+        ========================= -->
+
+        <div class="leadership-group head-group">
+
+            <h3 class="leadership-title">
+                Executive Leadership
+            </h3>
+
+            <div class="leader-grid">
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">
+                        👩🏻‍💼
+                    </div>
+
+                    <h3>Miki</h3>
+
+                    <p class="leader-role">
+                        Executive Director
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">
+                        👩🏻‍💼
+                    </div>
+
+                    <h3>Akshaya</h3>
+
+                    <p class="leader-role">
+                        Chief Operating Officer
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">
+                        👩🏻‍💼
+                    </div>
+
+                    <h3>Lexi</h3>
+
+                    <p class="leader-role">
+                        Chief Human Resources Officer
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             COMMUNICATIONS & OUTREACH
+        ========================= -->
+
+        <div class="leadership-group">
+
+            <h3 class="leadership-title">
+                Communications & Outreach
+            </h3>
+
+
+            <div class="leader-grid">
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📣</div>
+
+                    <h3>Sharvani</h3>
+
+                    <p class="leader-role">
+                        Head Director of Communications & Outreach
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📣</div>
+
+                    <h3>Anugnya</h3>
+
+                    <p class="leader-role">
+                        Director of Communications & Outreach
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📣</div>
+
+                    <h3>Elyana</h3>
+
+                    <p class="leader-role">
+                        Director of Communications & Outreach
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📣</div>
+
+                    <h3>Ellie</h3>
+
+                    <p class="leader-role">
+                        Director of Communications & Outreach
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📣</div>
+
+                    <h3>Manahil</h3>
+
+                    <p class="leader-role">
+                        Director of Communications & Outreach
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SOCIAL MEDIA & MARKETING
+        ========================= -->
+
+        <div class="leadership-group">
+
+            <h3 class="leadership-title">
+                Social Media & Marketing
+            </h3>
+
+
+            <div class="leader-grid">
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📱</div>
+
+                    <h3>Caroline</h3>
+
+                    <p class="leader-role">
+                        Head Director of Social Media & Marketing
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📱</div>
+
+                    <h3>Renee</h3>
+
+                    <p class="leader-role">
+                        Head Director of Social Media & Marketing
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📱</div>
+
+                    <h3>Tina</h3>
+
+                    <p class="leader-role">
+                        Director of Social Media & Marketing
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📱</div>
+
+                    <h3>Lia</h3>
+
+                    <p class="leader-role">
+                        Director of Social Media & Marketing
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📱</div>
+
+                    <h3>Gabrielle</h3>
+
+                    <p class="leader-role">
+                        Director of Social Media & Marketing
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CONTENT & EDUCATION
+        ========================= -->
+
+        <div class="leadership-group">
+
+            <h3 class="leadership-title">
+                Content & Education
+            </h3>
+
+
+            <p class="leadership-subtitle">
+                Head Director: <span class="tbd">TBD</span>
+            </p>
+
+
+            <div class="leader-grid">
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📚</div>
+
+                    <h3>Renad</h3>
+
+                    <p class="leader-role">
+                        Director of Content & Education
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📚</div>
+
+                    <h3>Karola</h3>
+
+                    <p class="leader-role">
+                        Director of Content & Education
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📚</div>
+
+                    <h3>Raina</h3>
+
+                    <p class="leader-role">
+                        Director of Content & Education
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📚</div>
+
+                    <h3>Thanuja</h3>
+
+                    <p class="leader-role">
+                        Director of Content & Education
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📚</div>
+
+                    <h3>Rihan</h3>
+
+                    <p class="leader-role">
+                        Director of Content & Education
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">📚</div>
+
+                    <h3>Ruchitha</h3>
+
+                    <p class="leader-role">
+                        Director of Content & Education
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             EVENTS & PROGRAMS
+        ========================= -->
+
+        <div class="leadership-group">
+
+            <h3 class="leadership-title">
+                Events & Programs
+            </h3>
+
+
+            <p class="leadership-subtitle">
+                Head Director: <span class="tbd">TBD</span>
+            </p>
+
+
+            <div class="leader-grid">
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">🎪</div>
+
+                    <h3>Journey</h3>
+
+                    <p class="leader-role">
+                        Director of Events & Programs
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">🎪</div>
+
+                    <h3>Hannah</h3>
+
+                    <p class="leader-role">
+                        Director of Events & Programs
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">🎪</div>
+
+                    <h3>Sonia</h3>
+
+                    <p class="leader-role">
+                        Director of Events & Programs
+                    </p>
+
+                </div>
+
+
+                <div class="leader-card">
+
+                    <div class="leader-photo">🎪</div>
+
+                    <h3>Audrey</h3>
+
+                    <p class="leader-role">
+                        Director of Events & Programs
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h2>Girls Lead Now</h2>
+
+                <p>
+                    Empowering girls. Building leaders.
+                    Creating change.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Explore</h3>
+
+                <a href="index.html#about">About</a>
+
+                <a href="index.html#values">Our Values</a>
+
+                <a href="leadership.html">Leadership</a>
+
+                <a href="events.html">Events & Programs</a>
+
+                <a href="curriculum.html">Curriculum</a>
+s
+                <a href="index.html#chapters">Chapters</a>
+
+                <a href="index.html#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Girls Lead Now. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
