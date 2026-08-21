@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Curriculum | Girls Lead Now</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+     nav {
+           height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background-color: rgb(255, 180, 208);
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 125px;
+            height: 55px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #df719d;
+        }
+
+        .nav-button {
+            background-color: #e587b6;
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 25px;
+        }
+
+        .nav-button:hover {
+            background-color: #812453;
+        }
+
+
+        /* =========================
+           CURRICULUM HERO
+        ========================= */
+
+        .curriculum-hero {
+            min-height: 650px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #eba9cd,
+                #eb91b7
+            );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+
+            background-color: #f1dceb;
+
+            color: #8e3d73;
+
+            padding: 8px 18px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+        .curriculum-hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+
+            color: #241c23;
+        }
+
+        .curriculum-hero h1 span {
+            color: #8e3d73;
+        }
+
+        .curriculum-hero p {
+            max-width: 650px;
+
+            margin: 0 auto 35px;
+
+            font-size: 19px;
+
+            color: #555;
+        }
+
+
+        /* =========================
+           COMING SOON
+        ========================= */
+
+        .coming-soon {
+            padding: 100px 7%;
+
+            background-color: white;
+        }
+
+        .coming-soon-box {
+            max-width: 1000px;
+
+            margin: auto;
+
+            background-color: #ce79b4;
+
+            color: white;
+
+            padding: 60px;
+
+            border-radius: 30px;
+
+            text-align: center;
+        }
+
+        .coming-soon-icon {
+            font-size: 50px;
+
+            margin-bottom: 15px;
+        }
+
+        .coming-soon-box h2 {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .coming-soon-box p {
+            max-width: 650px;
+
+            margin: 0 auto 20px;
+
+            color: #f7eaf4;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           REGISTER BUTTON
+        ========================= */
+
+        .register-button {
+            display: inline-block;
+
+            background-color: white;
+
+            color: #8e3d73;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .register-button:hover {
+            background-color: #f1dceb;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           CURRICULUM INFORMATION
+        ========================= */
+
+        .curriculum-info {
+            padding: 100px 7%;
+
+            background-color: #faf7fa;
+        }
+
+        .section-header {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+
+            margin-bottom: 15px;
+
+            color: #241c23;
+        }
+
+        .section-header p {
+            color: #666;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           CURRICULUM CARDS
+        ========================= */
+
+        .curriculum-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .curriculum-card {
+            background-color: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            border: 1px solid #eee;
+
+            transition: 0.25s;
+        }
+
+        .curriculum-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .curriculum-icon {
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+        .curriculum-card h3 {
+            margin-bottom: 10px;
+
+            color: #8e3d73;
+        }
+
+        .curriculum-card p {
+            color: #666;
+        }
+
+
+        /* =========================
+           UPCOMING CLASSES
+        ========================= */
+
+        .classes-section {
+            padding: 100px 7%;
+
+            background-color: white;
+        }
+
+        .class-box {
+            max-width: 1000px;
+
+            margin: auto;
+
+            background: linear-gradient(
+                135deg,
+                #f9eaf5,
+                #f4dce9
+            );
+
+            padding: 45px;
+
+            border-radius: 25px;
+
+            text-align: center;
+        }
+
+        .class-box h3 {
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+            color: #241c23;
+        }
+
+        .class-box p {
+            color: #555;
+
+            max-width: 650px;
+
+            margin: 0 auto 25px;
+        }
+
+        .class-button {
+            display: inline-block;
+
+            background-color: #8e3d73;
+
+            color: white;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .class-button:hover {
+            background-color: #6f2e59;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #241c23;
+
+            color: white;
+
+            padding: 60px 7% 30px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-brand h2 {
+            color: #f0cde5;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            color: #bbb;
+
+            max-width: 350px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            display: block;
+
+            color: #bbb;
+
+            margin-bottom: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1100px;
+
+            margin: 40px auto 0;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #444;
+
+            color: #999;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .curriculum-hero {
+                min-height: 600px;
+            }
+
+            .curriculum-info {
+                padding: 75px 5%;
+            }
+
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .classes-section {
+                padding: 75px 5%;
+            }
+
+            .coming-soon {
+                padding: 75px 5%;
+            }
+
+            .coming-soon-box {
+                padding: 40px 25px;
+            }
+
+            .coming-soon-box h2 {
+                font-size: 32px;
+            }
+
+            .section-header h2 {
+                font-size: 34px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="girlsleadnowfinal.png"
+                alt="Girls Lead Now Logo"
+            >
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#values">
+                Our Values
+            </a>
+
+            <a href="index.html#leadership">
+                Leadership
+            </a>
+
+            <a href="events.html">
+                Events & Programs
+            </a>
+
+            <a href="curriculum.html">
+                Curriculum
+            </a>
+
+            <a href="index.html#chapters">
+                Chapters
+            </a>
+
+            <a
+                href="index.html#contact"
+                class="nav-button"
+            >
+                Get Involved
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="curriculum-hero">
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                GIRLS LEAD NOW • CURRICULUM
+            </div>
+
+
+            <h1>
+
+                Learn.
+                <br>
+
+                <span>Lead.</span>
+
+                <br>
+
+                Make an Impact.
+
+            </h1>
+
+
+            <p>
+
+                Our curriculum is being designed to give girls
+                meaningful opportunities to learn, develop leadership
+                skills, and turn their ideas into action.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMING SOON
+    ========================= -->
+
+    <section class="coming-soon">
+
+        <div class="coming-soon-box">
+
+            <div class="coming-soon-icon">
+                📚
+            </div>
+
+
+            <h2>
+                Curriculum Coming Soon
+            </h2>
+
+
+            <p>
+
+                We are currently developing engaging classes,
+                educational resources, and leadership opportunities
+                for members of Girls Lead Now.
+
+            </p>
+
+
+            <p>
+
+                Check back soon for upcoming classes and registration
+                opportunities!
+
+            </p>
+
+
+            <!--
+            ADD YOUR CLASS REGISTRATION LINK HERE
+            -->
+
+            <a
+                href="#"
+                class="register-button"
+            >
+                Register for Classes
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHAT TO EXPECT
+    ========================= -->
+
+    <section class="curriculum-info">
+
+        <div class="section-header">
+
+            <h2>
+                What to Expect
+            </h2>
+
+
+            <p>
+
+                Our curriculum will focus on skills and experiences
+                that help girls become confident leaders and active
+                members of their communities.
+
+            </p>
+
+        </div>
+
+
+        <div class="curriculum-grid">
+
+
+            <!-- CARD 1 -->
+
+            <div class="curriculum-card">
+
+                <div class="curriculum-icon">
+                    🌱
+                </div>
+
+
+                <h3>
+                    Leadership
+                </h3>
+
+
+                <p>
+
+                    Develop confidence, communication skills,
+                    teamwork, and the ability to take initiative.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="curriculum-card">
+
+                <div class="curriculum-icon">
+                    💡
+                </div>
+
+
+                <h3>
+                    Education
+                </h3>
+
+
+                <p>
+
+                    Explore new topics, build useful skills,
+                    and learn from educational experiences.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div class="curriculum-card">
+
+                <div class="curriculum-icon">
+                    🤝
+                </div>
+
+
+                <h3>
+                    Community
+                </h3>
+
+
+                <p>
+
+                    Learn how to collaborate, serve your community,
+                    and work alongside other young leaders.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+
+            <div class="curriculum-card">
+
+                <div class="curriculum-icon">
+                    📣
+                </div>
+
+
+                <h3>
+                    Advocacy
+                </h3>
+
+
+                <p>
+
+                    Learn how to use your voice, raise awareness,
+                    and advocate for issues that matter.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 5 -->
+
+            <div class="curriculum-card">
+
+                <div class="curriculum-icon">
+                    🎯
+                </div>
+
+
+                <h3>
+                    Goal Setting
+                </h3>
+
+
+                <p>
+
+                    Build skills for setting goals, planning
+                    projects, and turning ideas into action.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 6 -->
+
+            <div class="curriculum-card">
+
+                <div class="curriculum-icon">
+                    ✨
+                </div>
+
+
+                <h3>
+                    Personal Growth
+                </h3>
+
+
+                <p>
+
+                    Develop confidence, explore your interests,
+                    and discover your potential as a leader.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         UPCOMING CLASSES
+    ========================= -->
+
+    <section class="classes-section">
+
+        <div class="class-box">
+
+            <h3>
+                Upcoming Classes
+            </h3>
+
+
+            <p>
+
+                Our first classes and educational programs are
+                currently being developed. Information about
+                upcoming sessions and registration will be posted here.
+
+            </p>
+
+
+            <!--
+            WHEN YOU HAVE A REAL REGISTRATION LINK,
+            REPLACE # BELOW WITH THE LINK.
+
+            Example:
+
+            href="https://forms.google.com/..."
+
+            -->
+
+            <a
+                href="#"
+                class="class-button"
+            >
+                Classes Coming Soon
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Girls Lead Now
+                </h2>
+
+
+                <p>
+
+                    Empowering girls.
+                    Building leaders.
+                    Creating change.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Explore
+                </h3>
+
+
+                <a href="index.html">
+                    Home
+                </a>
+
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+
+                <a href="index.html#values">
+                    Our Values
+                </a>
+
+
+                <a href="index.html#leadership">
+                    Leadership
+                </a>
+
+
+                <a href="events.html">
+                    Events & Programs
+                </a>
+
+
+                <a href="curriculum.html">
+                    Curriculum
+                </a>
+
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Girls Lead Now. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
