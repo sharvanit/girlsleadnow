@@ -39,13 +39,14 @@
            NAVIGATION
         ========================= */
 
+       
         nav {
             height: 75px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 7%;
-            background-color: white;
+            background-color: rgb(255, 180, 208);
             border-bottom: 1px solid #eee;
             position: sticky;
             top: 0;
@@ -55,13 +56,13 @@
         .logo img {
             width: 125px;
             height: 55px;
-            object-fit: contain;
+            object-fit: contain;    
             display: block;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -72,37 +73,37 @@
         }
 
         .nav-links a:hover {
-            color: #a64d86;
+            color: #df719d;
         }
 
         .nav-button {
-            background-color: #8e3d73;
+            background-color: #e587b6;
             color: white !important;
             padding: 11px 20px;
             border-radius: 25px;
         }
 
         .nav-button:hover {
-            background-color: #6f2e59;
+            background-color: #812453;
         }
-
 
         /* =========================
            HERO
         ========================= */
 
-        .hero {
-            min-height: 500px;
+          .hero {
+            min-height: 650px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 80px 20px;
+
             background: linear-gradient(
                 135deg,
-                #fff5fb,
-                #f9eef7,
-                #ffffff
+                #ffffff,
+                #eba9cd,
+                #eb91b7
             );
         }
 
@@ -112,8 +113,8 @@
 
         .hero-tag {
             display: inline-block;
-            background-color: #f1dceb;
-            color: #8e3d73;
+            background-color: #fce1ef;
+            color: #d85c9a;
             padding: 8px 18px;
             border-radius: 30px;
             font-size: 14px;
@@ -122,21 +123,58 @@
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 75px);
+            font-size: clamp(45px, 7vw, 80px);
             line-height: 1.05;
             margin-bottom: 25px;
             color: #241c23;
         }
 
         .hero h1 span {
-            color: #8e3d73;
+            color: #d85c9a;
         }
 
         .hero p {
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 650px;
+            margin: 0 auto 35px;
             font-size: 19px;
             color: #555;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-button {
+            background-color: #d85c9a;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .primary-button:hover {
+            background-color: d85c9a;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            border: 2px solid #d85c9a;
+            color: #d85c9a;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .secondary-button:hover {
+            background-color: #d85c9a;
+            color: white;
         }
 
 
@@ -395,7 +433,7 @@
     <nav>
 
         <a href="index.html" class="logo">
-            <img src="girls-lead-now-logo.png" alt="Girls Lead Now Logo">
+            <img src="girlsleadnowfinal.png" alt="Girls Lead Now Logo">
         </a>
 
         <div class="nav-links">
@@ -409,7 +447,7 @@
             <a href="events.html">Events & Programs</a>
 
             <a href="curriculum.html">Curriculum</a>
-            
+
             <a href="index.html#chapters">Chapters</a>
 
 
